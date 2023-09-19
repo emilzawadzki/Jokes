@@ -11,3 +11,6 @@
 "okButton" = "OK";
 "errorTitle" = "Error";
 "errorDescription" = "Something went wrong...";
+
+"ratingLabel" = "Rating: ";
+"rateLabel" = "Rate";

@@ -17,19 +17,25 @@ class JokeCell: UITableViewCell {
 	@IBOutlet var jokeImage: UIImageView!
 	@IBOutlet var setupLabel: UILabel!
 	@IBOutlet var deliveryLabel: UILabel!
-	
+	@IBOutlet var ratingLabel: UILabel!
+	@IBOutlet var ratingView: UIView!
+	@IBOutlet var ratingControl: UISegmentedControl!
+	@IBOutlet var rateLabel: UILabel!
 	
 	override func awakeFromNib() {
 		backgroundColor = .clear
+		rateLabel.text = "rateLabel".localized()
 	}
 	
 	func hideDelivery() {
 		deliveryLabel.alpha = 0
+		ratingView.alpha = 0
 	}
 	
 	func revealDelivery() {
 		UIView.animate(withDuration: 1.0, animations: {
 			self.deliveryLabel.alpha = 1
+			self.ratingView.alpha = 1
 		})
 	}
 	
@@ -39,5 +45,24 @@ class JokeCell: UITableViewCell {
 			return
 		}
 		presenterDelegate.jokeTapped(cell: self)
+	}
+	
+	func setRatingLabelValue(rating: Int) {
+		ratingLabel.text = "ratingLabel".localized() + " \(rating)/\(maxRating)"
+	}
+	
+	func setRating(rating: Int) {
+		setRatingLabelValue(rating: rating)
+		if rating > 0 && rating <= maxRating {
+			ratingControl.selectedSegmentIndex = rating - 1
+		}
+	}
+	@IBAction func ratingChanged(_ sender: Any) {
+		guard let presenterDelegate = presenterDelegate else {
+			print("nil presenter delegate")
+			return
+		}
+		// selectedSegmentIndex has values 0-4, but rating has values 1-5
+		presenterDelegate.ratingChanged(cell: self, rating: ratingControl.selectedSegmentIndex + 1)
 	}
 }

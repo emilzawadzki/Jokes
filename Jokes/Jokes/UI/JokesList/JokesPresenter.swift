@@ -9,6 +9,7 @@ import Foundation
 
 protocol JokesPresenterDelegate : BasePresenter {
 	func jokeTapped(cell: JokeCell)
+	func ratingChanged(cell: JokeCell, rating: Int)
 }
 
 class JokesPresenter: BasePresenter, JokesPresenterDelegate {
@@ -56,6 +57,8 @@ class JokesPresenter: BasePresenter, JokesPresenterDelegate {
 		cell.categoryLabel.text = joke.category
 		cell.setupLabel.text = joke.setup
 		cell.deliveryLabel.text = joke.delivery
+		let rating = interactor.getRating(forJokeWithID: joke.id)
+		cell.setRating(rating: rating)
 		cell.presenterDelegate = self
 		interactor.getImage(forJokeWithID: joke.id, completion: { image in
 			if cell.jokeID == joke.id {
@@ -68,6 +71,14 @@ class JokesPresenter: BasePresenter, JokesPresenterDelegate {
 	
 	func jokeTapped(cell: JokeCell) {
 		cell.revealDelivery()
+	}
+	
+	func ratingChanged(cell: JokeCell, rating: Int) {
+		guard let jokeID = cell.jokeID else {
+			return
+		}
+		interactor.rateJoke(jokeID: jokeID, rating: rating)
+		cell.setRatingLabelValue(rating: rating)
 	}
 	
 }

@@ -9,15 +9,22 @@ import Foundation
 import UIKit
 
 fileprivate let defaultLanguageCode = "en"
+let maxRating = 5
 
 class JokesInteractor: BaseInteractor {
 	
+	private var databaseHelper: DatabaseHelper
+	
+	override init() {
+		databaseHelper = DatabaseHelper()
+	}
+	
 	func getJokes(languageCode: String? = Locale.current.language.languageCode?.identifier, retryCount: Int = 0, successBlock: @escaping ([JokeModel]) -> Void, errorBlock: @escaping (NSError) -> Void) {
 		dataFacade.getJokes(languageCode: languageCode,successBlock: { jokes in
-			let filteredJokes = jokes.filter {
+			var filteredJokes = jokes.filter {
 				!$0.nsfwFlag
 			}
-			
+			filteredJokes.sort(by: { $0.id < $1.id })
 			successBlock(filteredJokes)
 		}, errorBlock: { [weak self] error in
 			if languageCode == Locale.current.language.languageCode?.identifier && retryCount == 0 {
@@ -65,7 +72,15 @@ class JokesInteractor: BaseInteractor {
 			}
 		}
 		
-		
+	}
+	
+	func getRating(forJokeWithID jokeID: Int) -> Int {
+		// default value
+		return databaseHelper.jokeRating(jokeId: jokeID)
+	}
+	
+	func rateJoke(jokeID: Int, rating: Int) {
+		databaseHelper.saveRating(jokeId: jokeID, rating: rating)
 	}
 	
 }
