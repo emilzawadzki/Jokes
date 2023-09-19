@@ -12,7 +12,7 @@ fileprivate let idField = "jokeID"
 fileprivate let ratingField = "rating"
 fileprivate let entityName = "JokeEntity"
 
-fileprivate let defaultRating = 1
+let defaultRating = 0
 
 class DatabaseHelper: NSObject {
 

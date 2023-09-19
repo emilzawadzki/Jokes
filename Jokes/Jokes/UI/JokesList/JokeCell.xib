@@ -21,22 +21,22 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNa-wY-zLi">
-                    <rect key="frame" x="110" y="50" width="273" height="20.333333333333329"/>
+                    <rect key="frame" x="110" y="40" width="273" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="TextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7V-eJ-TiX">
-                    <rect key="frame" x="109.99999999999999" y="10" width="43.333333333333329" height="20"/>
+                    <rect key="frame" x="109.99999999999999" y="5" width="43.333333333333329" height="20"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <color key="textColor" name="TextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sLb-mh-sBH">
-                    <rect key="frame" x="309.66666666666669" y="0.0" width="83.333333333333314" height="40"/>
+                    <rect key="frame" x="329.66666666666669" y="0.0" width="63.333333333333314" height="30"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvY-Nl-f8j">
-                            <rect key="frame" x="20.000000000000004" y="10" width="43.333333333333343" height="20"/>
+                            <rect key="frame" x="10" y="5" width="43.333333333333336" height="20"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                             <color key="textColor" name="TextColor"/>
                             <nil key="highlightedColor"/>
@@ -44,10 +44,10 @@
                     </subviews>
                     <color key="backgroundColor" name="AccentColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="QvY-Nl-f8j" secondAttribute="bottom" constant="10" id="WYV-8I-Wye"/>
-                        <constraint firstAttribute="trailing" secondItem="QvY-Nl-f8j" secondAttribute="trailing" constant="20" id="cUC-nK-rgg"/>
-                        <constraint firstItem="QvY-Nl-f8j" firstAttribute="top" secondItem="sLb-mh-sBH" secondAttribute="top" constant="10" id="mUG-ao-QD2"/>
-                        <constraint firstItem="QvY-Nl-f8j" firstAttribute="leading" secondItem="sLb-mh-sBH" secondAttribute="leading" constant="20" id="z3o-fB-yyr"/>
+                        <constraint firstAttribute="bottom" secondItem="QvY-Nl-f8j" secondAttribute="bottom" constant="5" id="WYV-8I-Wye"/>
+                        <constraint firstAttribute="trailing" secondItem="QvY-Nl-f8j" secondAttribute="trailing" constant="10" id="cUC-nK-rgg"/>
+                        <constraint firstItem="QvY-Nl-f8j" firstAttribute="top" secondItem="sLb-mh-sBH" secondAttribute="top" constant="5" id="mUG-ao-QD2"/>
+                        <constraint firstItem="QvY-Nl-f8j" firstAttribute="leading" secondItem="sLb-mh-sBH" secondAttribute="leading" constant="10" id="z3o-fB-yyr"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -56,7 +56,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kax-jO-BF7">
-                    <rect key="frame" x="110" y="80.333333333333329" width="273" height="20.333333333333329"/>
+                    <rect key="frame" x="110" y="70.333333333333329" width="273" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="TextColor"/>
                     <nil key="highlightedColor"/>

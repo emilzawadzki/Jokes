@@ -48,7 +48,11 @@ class JokeCell: UITableViewCell {
 	}
 	
 	func setRatingLabelValue(rating: Int) {
-		ratingLabel.text = "ratingLabel".localized() + " \(rating)/\(maxRating)"
+		if rating == defaultRating {
+			ratingLabel.text = "ratingLabel".localized() + "noneRating".localized()
+		} else {
+			ratingLabel.text = "ratingLabel".localized() + " \(rating)/\(maxRating)"
+		}
 	}
 	
 	func setRating(rating: Int) {
