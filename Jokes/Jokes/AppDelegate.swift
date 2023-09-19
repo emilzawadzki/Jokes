@@ -12,13 +12,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	private var rootRouter = JokesRouter()
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		
-		let storyboard = UIStoryboard(name: "Main", bundle: .main)
-		if let rootViewController = storyboard.instantiateInitialViewController() {
-			window?.rootViewController = UINavigationController(rootViewController: rootViewController)
+		
+		if let rootViewController = rootRouter.getMainView() {
+			window?.rootViewController = rootViewController
 		}
 		
 		return true
