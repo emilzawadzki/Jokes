@@ -9,4 +9,6 @@ import Foundation
 
 protocol JokesViewProtocol: BaseViewProtocol {
 	
+	func reloadJokesTable()
+	
 }

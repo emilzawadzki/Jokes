@@ -87,4 +87,24 @@ class JokesDataFacade {
 		}
 		
 	}
+	
+	func getJokeImagePath(jokeId: Int, successBlock: @escaping (String?) -> Void, errorBlock: @escaping (Error) -> Void) {
+		let cachedImagesFolder = Constants.cachedImagesFolder
+		let destination: DownloadRequest.Destination = { _, _ in
+			let documentsURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+			let fileURL = documentsURL.appendingPathComponent(cachedImagesFolder).appendingPathComponent("\(jokeId).jpg")
+			return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+		}
+		session.download("https://picsum.photos/100/150", to: destination).response { response in
+			if let error = response.error {
+				print("Error during loading imege for joke with ID \(jokeId): \(error)")
+				return
+			}
+			guard let fileURL = response.fileURL else {
+				print("Error during loading imege for joke with ID \(jokeId)")
+				return
+			}
+			successBlock(fileURL.path)
+		}
+	}
 }

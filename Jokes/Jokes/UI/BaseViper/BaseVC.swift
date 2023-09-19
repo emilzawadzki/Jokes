@@ -56,6 +56,7 @@ class BaseVC<T: BasePresenter>: UIViewController, BaseViewProtocol {
 			let loadingSpinner = UIActivityIndicatorView(style: .large)
 			loadingSpinner.backgroundColor = UIColor.black.withAlphaComponent(0.5)
 			self.view.addSubview(loadingSpinner)
+			loadingSpinner.frame = self.view.bounds
 			loadingSpinner.startAnimating()
 			self.loadingSpinner = loadingSpinner
 		}
@@ -70,8 +71,8 @@ class BaseVC<T: BasePresenter>: UIViewController, BaseViewProtocol {
 	}
 	
 	func showSimpleError(_ errorText: String) {
-		let alert = UIAlertController(title: nil, message: errorText, preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		let alert = UIAlertController(title: "errorTitle".localized(), message: errorText, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "okButton".localized(), style: .default, handler: nil))
 		self.present(alert, animated: true, completion: nil)
 	}
 }

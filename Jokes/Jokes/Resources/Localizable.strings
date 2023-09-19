@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Jokes
+
+  Created by Emil Zawadzki on 19/09/2023.
+  
+*/
+
+"listTitle" = "Jokes for you:";
+
+"okButton" = "OK";
+"errorTitle" = "Error";
+"errorDescription" = "Something went wrong...";
