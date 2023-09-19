@@ -15,3 +15,5 @@
 "ratingLabel" = "Rating: ";
 "rateLabel" = "Rate";
 "noneRating" = "none";
+
+"inProgress" = "In progress...";

@@ -22,5 +22,16 @@ class JokesRouter: BaseRouter {
 		return nil
 	}
 	
+	func getAddJokesView() -> UIViewController? {
+		
+		if let addJokeVC = Bundle.main.loadNibNamed("AddJokeVC", owner: self, options: nil)?.first as? AddJokeVC {
+			
+			addJokeVC.presenter = AddJokePresenter(view: addJokeVC, router: self)
+			
+			return addJokeVC
+		}
+		return nil
+	}
+	
 	
 }

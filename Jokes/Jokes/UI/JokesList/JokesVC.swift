@@ -40,6 +40,9 @@ class JokesVC: BaseVC<JokesPresenter>, JokesViewProtocol, UITableViewDelegate, U
 		return cell ?? UITableViewCell()
 	}
 
-
+	@IBAction func addJokeTapped(_ sender: Any) {
+		presenter?.addJokeTapped()
+	}
+	
 }
 

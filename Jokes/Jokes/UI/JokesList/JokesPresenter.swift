@@ -81,4 +81,11 @@ class JokesPresenter: BasePresenter, JokesPresenterDelegate {
 		cell.setRatingLabelValue(rating: rating)
 	}
 	
+	
+	func addJokeTapped() {
+//		if let addVC = router.getAddJokesView() {
+//			router.navigationController()?.present(addVC, animated: true)
+//		}
+		view?.showSimpleError("inProgress".localized())
+	}
 }

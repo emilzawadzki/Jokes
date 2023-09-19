@@ -30,26 +30,43 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4Ik-bT-ad1">
-                                <rect key="frame" x="20" y="167" width="353" height="631"/>
+                                <rect key="frame" x="20" y="167" width="353" height="611"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="rh3-HQ-ZK9"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Ocj-C1-Qyn"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Uc-fI-KWi">
+                                <rect key="frame" x="20" y="788" width="353" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Zo5-ZR-hxC"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" name="TextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addJokeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9x3-lG-Isv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Ik-bT-ad1" secondAttribute="trailing" constant="20" id="42C-2s-eQh"/>
                             <constraint firstItem="4Ik-bT-ad1" firstAttribute="top" secondItem="UuO-Ow-eJz" secondAttribute="bottom" constant="30" id="6rX-CG-Vvx"/>
+                            <constraint firstItem="8Uc-fI-KWi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7ks-IF-7qD"/>
                             <constraint firstItem="COq-Zv-Blb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="AYN-ov-qre"/>
+                            <constraint firstItem="8Uc-fI-KWi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="Dcb-zX-IfM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UuO-Ow-eJz" secondAttribute="trailing" constant="20" id="FY6-z4-3TP"/>
+                            <constraint firstItem="8Uc-fI-KWi" firstAttribute="top" secondItem="4Ik-bT-ad1" secondAttribute="bottom" constant="10" id="Msm-Q8-wgc"/>
                             <constraint firstItem="COq-Zv-Blb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="W9V-qc-XJz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Ik-bT-ad1" secondAttribute="bottom" constant="20" id="YoB-2U-H31"/>
                             <constraint firstItem="UuO-Ow-eJz" firstAttribute="leading" secondItem="COq-Zv-Blb" secondAttribute="trailing" constant="10" id="fv6-IT-0Zj"/>
                             <constraint firstItem="4Ik-bT-ad1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mwO-h7-Ryq"/>
                             <constraint firstItem="UuO-Ow-eJz" firstAttribute="centerY" secondItem="COq-Zv-Blb" secondAttribute="centerY" id="nri-qb-gCB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Uc-fI-KWi" secondAttribute="trailing" constant="20" id="r2p-8F-IGt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -64,6 +81,9 @@
     </scenes>
     <resources>
         <image name="SplashLogo" width="300" height="300"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.70980392156862748" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="BackgroundColor">
             <color red="1" green="0.89411764705882357" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
